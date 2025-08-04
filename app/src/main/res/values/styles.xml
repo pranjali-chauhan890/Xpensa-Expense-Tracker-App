@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DashboardCard">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">160dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/grid_item_bg</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+</resources>

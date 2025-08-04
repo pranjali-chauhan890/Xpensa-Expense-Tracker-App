@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chatbot_bg">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/chatbotBackButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="start"
+        android:src="@drawable/ic_back_arrow"
+        android:contentDescription="Back"
+        android:layout_marginBottom="12dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvChatbot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chatbot"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:gravity="center" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+
+    <!-- Chat list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:overScrollMode="never" />
+
+    <!-- Input box -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/messageEditText"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Type a message..."
+            android:background="@drawable/rounded_edittext"
+            android:padding="10dp" />
+
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_send"
+            android:contentDescription="Send"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:tint="@color/primaryColor"/>
+    </LinearLayout>
+</LinearLayout>

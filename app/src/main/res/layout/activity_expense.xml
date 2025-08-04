@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F4F4F4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/expense_bg"
+        android:padding="24dp">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="start"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="Back"
+            android:layout_marginBottom="12dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvExpenseTracker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Expenses"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#595757"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+
+
+        <!-- Amount Input -->
+        <EditText
+            android:id="@+id/editTextAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Amount"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginTop="20dp" />
+
+        <!-- Description Input -->
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Description"
+            android:inputType="text"
+            android:padding="12dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginTop="12dp" />
+
+        <!-- Transaction Type (Income or Expense) -->
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <RadioButton
+                android:id="@+id/radioIncome"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Income"
+                android:textColor="#000000" />
+
+            <RadioButton
+                android:id="@+id/radioExpense"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Expense"
+                android:textColor="#000000" />
+        </RadioGroup>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Transaction"
+            android:backgroundTint="#E476CA"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp" />
+
+        <!-- Total Expense TextView -->
+        <TextView
+            android:id="@+id/textTotalExpense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total: ₹0.00"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FCFDFC"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp" />
+
+        <!-- Divider -->
+
+
+        <!-- RecyclerView for transaction history -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="#DDDDDD" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/expenseRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>

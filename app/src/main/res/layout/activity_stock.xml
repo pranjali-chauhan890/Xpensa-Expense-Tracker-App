@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/stockdata_bg"
+    android:padding="16dp">
+
+    <!-- Back Button and Title -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="start"
+        android:src="@drawable/ic_back_arrow"
+        android:contentDescription="Back"
+        android:layout_marginBottom="12dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/tvExpenseTracker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stock Data"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#454444"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+
+    <!-- ✅ Search Bar using SearchView -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:queryHint="Search Stock Symbol (e.g., AAPL)"
+        android:iconifiedByDefault="false"
+        android:background="@drawable/edittext_background" />
+
+    <!-- Stock Info Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/stockCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/stockName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apple Inc. (AAPL)"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/stockPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price: $172.50"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/stockChange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+1.25% today"
+                android:textSize="16sp"
+                android:textColor="#388E3C"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Recent Stocks RecyclerView -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recent Searches"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recentStockRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+</LinearLayout>
